@@ -1,0 +1,24 @@
+<% layout('layouts/boilerplate')%>
+<div class="row">
+    <h1 class="text-center">New Person</h1>
+    <div class="col-6 offset-3">
+        <form action="/people" method="POST">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" id="title" name="person[title]">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="firstName">First Name</label>
+                <input class="form-control" type="text" id="firstName" name="person[firstName]">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="surname">Surname</label>
+                <input class="form-control" type="text" id="surname" name="person[surname]">
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Add New Person</button>
+            </div>
+        </form>
+        <a href="/campgrounds">All Campgrounds</a>
+    </div>
+</div>
