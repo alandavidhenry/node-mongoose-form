@@ -1,0 +1,14 @@
+<% layout('layouts/boilerplate') %> 
+<h1>The index page</h1>
+
+<% for( let person of people ) { %>
+<div class="card mb-3">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title"><%= person.title %> <%= person.firstName %> <%= person.surname %> </h5>
+            </div>
+        </div>
+    </div>
+</div>
+<% } %>

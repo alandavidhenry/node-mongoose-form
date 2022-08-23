@@ -8,6 +8,12 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Home Page' });
 });
 
+/* GET people index page */
+router.get('/index', async (req, res, next) => {
+  const people = await Person.find({});
+  res.render('people/index', { people });
+});
+
 /* GET new person page */
 router.get('/new', (req, res, next) => {
   res.render('people/new');
@@ -21,10 +27,11 @@ router.post('/people', async (req, res, next) => {
 });
 
 /* GET person using id page */
-// router.get('/:id', async (req, res, next) => { 
+router.get('/show', async (req, res, next) => { 
 /* CANNOT USE PARAMS IN GET */
 //   const person = await Person.findById(req.params.id);
-//   res.render('people'), { person };
-// });
+  res.render('people/show');
+  // res.render('people'), { person };
+});
 
 module.exports = router;
