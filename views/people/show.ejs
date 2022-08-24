@@ -1,10 +1,16 @@
 <% layout('layouts/boilerplate')%>
 <h1>The show page</h1>
+<p><a href="/index">Click here</a> to go to to the index page.</p>
 
 <div class="col-6">
     <div class="card mb-3">
         <div class="card-body">
-            <h5 class="card-title"><%= person.title %> <%= person.firstName %> <%= person.surname %></h5>
+            <h5 class="card-title"><%= person.title %> <%= person.surname %></h5>
+            <p class="card-text"><%= person.firstName %></p>
+            <a class="card-link btn btn-info" href="/people/<%=person._id%>/edit">Edit</a>
+            <form class="d-inline" action="/people/<%=person._id%>?_method=DELETE" method="POST">
+                <button class="btn btn-danger">Delete</button>
+            </form>
         </div>
     </div>
 </div>
